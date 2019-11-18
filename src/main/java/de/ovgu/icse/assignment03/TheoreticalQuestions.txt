@@ -1,0 +1,20 @@
+03-01: Sorting
+*Please answer every theoretical question regarding this task here*
+
+
+
+
+
+03-02: Quicksort for Comparable-Objects
+*Please answer every theoretical question regarding this task here*
+
+
+
+
+
+03-03: MergeSort Using Comparator
+*Please answer every theoretical question regarding this task here*
+
+
+
+
