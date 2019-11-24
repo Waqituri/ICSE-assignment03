@@ -52,7 +52,7 @@ public class MainTest {
         });
         
         for (int i = 0; i < strings.length - 1; i++) {
-            assertTrue(strings[i].length() >= strings[i + 1].length());
+assertTrue(strings[i].length() >= strings[i + 1].length());
         }
     }
 }

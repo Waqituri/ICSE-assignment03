@@ -1,19 +1,102 @@
 03-01: Sorting
-*Please answer every theoretical question regarding this task here*
+
+Insertion Sort:
+In this sort, the current element is compared with the largest value in array to
+find the proper position for that element in the array and move the element there by
+sliding all the elements larger than the current element one position ahead to make room for it.
+If the selected value is the largest then it leaves that element and move to the other element.
+
+Selection Sort:
+In this, the first element of the array is selected and then it searches for the smallest element in the array.
+After finding the smallest element, this element is swapped with the first element then it moves to the second element
+and the same processes is repeated until the array is sorted.
+
+Difference:
+In insertion sort, after comparison the current element is inserted into its proper position in the array thus
+adjusting list every time while in selection sort current element swapped position with the smallest element
+on the right side in the array.
 
 
+Which of these sorting algorithms is stable?
+Insertion Sort is the stable one. A Stable sorting simply means the relative order of the duplicate elements should not
+change.
+In Insertion sorting we just pick an element and places it in its correct place and in the logic
+we are only swapping the elements if the element is larger.
 
 
+How does its computational complexity change if the position for inserting the element is found using binary0 search
+instead of linear search?
+In insertion sort the total time complexity doesn't decrease when using binary search and remains O(n2).
+As to search an element with binary search it takes O(log n) time, and process of moving the elements takes O(n) time.
+Then i in total O(log n)+O(n)=O(n) time. So for nâˆ’1 elements, it takes n(nâˆ’1)=O(n2) time.
 
 03-02: Quicksort for Comparable-Objects
 *Please answer every theoretical question regarding this task here*
 
 
+Explain the algorithm Quicksort using the example a = {5, 3, 4, 8, 7, 1, 2} and the middle element constituting the
+pivot element. Write down the contents of this array (and resulting sub arrays) after each partitioning.
+
+Array to be sorted
+        [5, 3, 4, 8, 7, 1, 2]
+Firstly this determine the middle number "8" as pivot and placed it at the end of the array.
+        [5, 3, 4, 7, 1, 2, 8]
+In this case since the middle element was the largest and it is now in its correct position
+we again chose the pivot "4".
+Then, we and select first an item from left which is larger than the pivot and from right
+which is smaller than the pivot and swap them;
+        [2, 3, 4, 7, 1, 5, 8]
+we repeat it again until all the elements on the left are smaller than pivot and on right are greater than pivot.
+so,     [2, 3, 1, 4, 7, 5, 8]
+Now we sort both sides of pivot separately by repeating the process,
+in left we select "3" as pivot while "5" for the right side, and by following the process we got our sorted array;
+          [1, 2, 3, 4, 5, 7, 8]
+
+
+
+Which complexity class does *QuickSort* belong to (average case)? Give reasons.
+Quick sort belongs to O(n log(n)) for an average case, since all elements swap each other log n times
+if the selected pivot is appropriate.
+
+Discuss whether the choice of the pivot element influences the number of comparisons needed.
+What does a “worst case” look like?
+Yes, it influences the number of comparisons, in case of a bad pivot like the lowest elements in the array then
+algorithm will call QuickSort n^2 times and it will make runtime O(n^2) in the worst case scenario.
 
 
 
 03-03: MergeSort Using Comparator
 *Please answer every theoretical question regarding this task here*
+
+Explain the sorting algorithm MergeSort, presented above, considering the example of a = {5, 3, 4, 7, 1, 2} while
+noting down all intermediate steps. Explain the principle of “divide and conquer” with this algorithm.
+MergeSort:
+
+Array to be sorted
+       [5, 3, 4, 7, 1, 2]
+
+Firstly this determines the length of array then divide it in half by determining middle term i.e. 7
+so,    [5, 3, 4 ] | [7, 1, 2]
+Now,   [5, 3] | [4] | [7, 1] | [2]
+       [5] | [3] | [4]  | [7] | [1] | [2]
+       [3, 5] | [4] | [1, 7] | [2]
+       [3, 4, 5]  | [1, 2, 7]
+As both sub array are sorted, they are now merged in sorted order;
+          [1, 2, 3, 4, 5, 7]
+
+The concept of divide and conquer in this algorithm is that in fist step we divided the array in half and keep dividing
+it until only one element is left in each halves and then sort both sub array and merge them thus conquering it.
+
+
+Why does this algorithm require less space than that one presented during the lecture?
+This algorithm require less space than that one presented during the lecture has two additional arrays arrLeft[]
+and arrRight[] while this algorithm only use one additional array copy[].
+
+Is the MergeSort algorithm stable? Give reasons for your answer?
+Yes, MergeSort algorithm is stable since we favor values in left sub array over right sub array
+in case the values are same since we use comparators.
+It is also able to sort a given data in O(nLogn) complexity as against O(n2) complexity of bubble sort and selection
+sort.
 
 
 
